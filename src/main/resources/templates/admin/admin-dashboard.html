@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+        <div class="text-center mb-5">
+            <h2 class="mb-3">Benvenuto nell'area admin!</h2>
+            <p class="text-muted">Scegli un'azione da eseguire</p>
+        </div>
+
+        <div class="d-grid gap-3 col-10 col-sm-6 col-md-4">
+            <a class="btn btn-primary btn-lg" th:href="@{/admin/add}">Aggiungi Volo</a>
+            <a class="btn btn-info btn-lg text-white" th:href="@{/admin/list}">Mostra Voli</a>
+        </div>
+
+       
+        <div class="d-flex justify-content-center gap-3 mt-5">
+            <form th:action="@{/}" method="get">
+                <button class="btn btn-outline-primary" type="submit">Home</button>
+            </form>
+            <form th:action="@{/admin/logout}" method="post">
+                <button class="btn btn-outline-secondary" type="submit">Logout</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

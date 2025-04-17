@@ -24,6 +24,8 @@
                     <th>ID Volo</th>
                     <th>Partenza</th>
                     <th>Arrivo</th>
+                    <th>Posti disponibili</th>
+                    <th>Cargo disponibile</th>
                     <th>Opzioni</th>
                 </tr>
             </thead>
@@ -38,6 +40,8 @@
                         <span th:text="${flight.arrivalCity}"></span><br>
                         <small th:text="${flight.arrivalTime}"></small>
                     </td>
+                    <td th:text="${flight.aircraft.passengerCapacity - flight.passengers}"></td>
+                    <td th:text="${flight.aircraft.cargoCapacity - flight.cargo}"></td>
                     <td>
                         <a th:href="@{/admin/modify/{flightId}(flightId=${flight.flightId})}" class="btn btn-warning btn-sm me-1">Modifica</a>
                         <a th:href="@{/admin/delete/{flightId}(flightId=${flight.flightId})}" class="btn btn-danger btn-sm">Elimina</a>
